@@ -1,0 +1,49 @@
+version: '3'
+services:
+  server:
+    image: gocom:latest
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      gocom-network:
+        aliases:
+          - server
+    ports:
+      - "8080:8080"
+    command: gocom --mode server
+  client1:
+    image: gocom:latest
+    networks:
+      gocom-network:
+        aliases:
+          - client1
+    command: gocom --mode client --remote server:8080
+  # client2:
+  #   image: gocom:latest
+  #   networks:
+  #     gocom-network:
+  #       aliases:
+  #         - client2
+  #   command: gocom --mode client --remote server:8080
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: 'gocom'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    networks:
+      gocom-network:
+        aliases:
+          - mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 2s
+      retries: 10
+networks:
+  gocom-network:
