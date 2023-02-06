@@ -7,6 +7,10 @@ import (
 	"github.com/quietjoy/gocom/pkg/models"
 )
 
+type GokomzStore interface {
+	GetAllClients() ([]models.Client, error)
+}
+
 func NewMysqlDB(dsn string) (*gorm.DB, error) {
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {

@@ -4,9 +4,8 @@ import (
 	"flag"
 	"log"
 
-	"github.com/quietjoy/gocom/pkg/client"
 	"github.com/quietjoy/gocom/pkg/models"
-	"github.com/quietjoy/gocom/pkg/servers"
+	"github.com/quietjoy/gocom/pkg/modes"
 )
 
 func initializeCommandQueue() []models.ControlCommand {
@@ -43,10 +42,10 @@ func main() {
 	switch *mode {
 	case "server":
 		log.Println("Running in server mode")
-		servers.RunServer()
+		modes.RunServer()
 	case "client":
 		log.Println("Running in client mode")
-		client.RunClient(serverConnection)
+		modes.RunClient(serverConnection)
 	default:
 		log.Println("Invalid mode")
 		panic("Invalid mode")

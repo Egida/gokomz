@@ -38,15 +38,23 @@ A management engine for remote machines. Uses a client server model.
     - Record client information
     - Record commands sent to a client
     - Record responses from those clients
-    + Update test script to updated endpoint
+    - Update test script to updated endpoint
+- Add gitignore
+
 
 ### Phase 6
 
-+ Run different types of commands: scripts, commands, new c&c, delete yourself
-+ Refactor server to controller methods
++ Refactor server to controller methods -  invalid memory address or nil pointer dereference
 + modes: client, server, proxy, beacon
++ Run different types of commands: scripts, commands, beacon, delete, profiler
 + add authentication to admin endpoints
-+ Use uuid for commands
++ Add UUID for commands
++ Rename ControlCommands to Commands
+
+
+## TODO
+
++ use wire for dependecy injection - https://blog.drewolson.org/go-dependency-injection-with-wire
 
 ## Features
 
@@ -63,3 +71,11 @@ A management engine for remote machines. Uses a client server model.
 + Support various methods for client to server authentication
 + Persistance mechanisms for Linux, Mac, Windows
 + Each time compiled, new file hash
+
++ Profiler - discovers which client-side applications your target uses, with version information
++ Keystroke logger
++ Takes screenshots
++ File downloader
++ Spawn other payloads
++ Exfiltrator - use HTTP, HTTPS and DNS to exfiltrate data using a predefined bandwidth
++ [SMB Beacon](https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/listener-infrastructue_beacon-smb.htm)

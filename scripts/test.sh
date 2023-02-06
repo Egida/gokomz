@@ -15,7 +15,7 @@ echo $COMMAND
 for CLIENT in $(echo $CLIENTS | jq -c '.[]'); do
     CLIENTID=$(echo $CLIENT | jq -r '.uuid')
     echo $CLIENTID
-    curl -H 'Content-Type: application/json' -X POST -d $COMMAND 127.0.0.1:8080/$CLIENTID/command
+    curl -H 'Content-Type: application/json' -X POST -d $COMMAND 127.0.0.1:8080/client/$CLIENTID/command
 done
 
 exit 0
