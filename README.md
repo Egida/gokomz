@@ -1,8 +1,6 @@
-# Gocom
+# Gokomz
 
-A management engine for remote machines. Uses a client server model.
-
-## TODO
+A botnet built for research purposes. For EDUCATIONAL PURPOSES ONLY.
 
 ### Phase 1
 
@@ -20,7 +18,6 @@ A management engine for remote machines. Uses a client server model.
 ### Phase 3
 
 - Refactor server and client into seperate files
-+ Refactor args parse into seperate files (TODO) <<<<<<<<<<<<
 - Ensure client never dies
 
 ### Phase 4
@@ -28,7 +25,6 @@ A management engine for remote machines. Uses a client server model.
 - Support sending commands to a client via the c&c server
 - Support getting client information from the API
 - Test with multiple clients
-+ Why is the jitter the same across both clients (TODO) <<<<<<<<<<<<
 
 
 ### Phase 5
@@ -55,6 +51,8 @@ A management engine for remote machines. Uses a client server model.
 ## TODO
 
 + use wire for dependecy injection - https://blog.drewolson.org/go-dependency-injection-with-wire
++ Refactor args parse into seperate files (TODO) <<<<<<<<<<<<
++ Why is the jitter the same across both clients (TODO) <<<<<<<<<<<<
 
 ## Features
 
@@ -64,7 +62,6 @@ A management engine for remote machines. Uses a client server model.
     + mTLS
 + Support client groups
 + Allow the server to act as an install server (given a key)
-+ Proxy functionality for a server
 + CLI that allows easy interation at a server level for sending commands to a single or groups of clients
 + Output the clients and their last communication
 + Configurable client heartbeats
@@ -72,10 +69,13 @@ A management engine for remote machines. Uses a client server model.
 + Persistance mechanisms for Linux, Mac, Windows
 + Each time compiled, new file hash
 
+#### Meat and potatoes botnet
+
 + Profiler - discovers which client-side applications your target uses, with version information
 + Keystroke logger
 + Takes screenshots
 + File downloader
 + Spawn other payloads
 + Exfiltrator - use HTTP, HTTPS and DNS to exfiltrate data using a predefined bandwidth
-+ [SMB Beacon](https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/listener-infrastructue_beacon-smb.htm)
++ Proxy
++ Schedule tasks
